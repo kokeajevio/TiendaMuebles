@@ -3,11 +3,16 @@
 Muñoz Sánchez, Jorge
 Practica Evaluable Tema 5
 Ejercicio 1
-Apartado 1.1 si / no / parcialmente
-Apartado 1.2 si / no / parcialmente
-Apartado 1.3 si / no / parcialmente
-Apartado [...]
-Apartado [...]
+Apartado 1.1 si
+Apartado 1.2 si 
+Apartado 1.3 si 
+Apartado 1.4 no 
+Apartado 1.5 no 
+Apartado 1.6 si / no / parcialmente
+Apartado 1.7 si / no / parcialmente
+Apartado 1.8 si / no / parcialmente
+
+
 */
 
 
@@ -21,7 +26,7 @@ namespace Project
 {
     class TiendaMuebles
     {
-        Mueble presentación = new Mueble("Espejo escocés", "circular para vestíbulos", "azul cobalto", 1977, 9500, "Esparta", 33, 699988986);
+        Mueble presentación = new Mueble("Espejo escocés", "circular para vestíbulos", "azul cobalto", 1977, 9500, "Esparta", 09, 699988986);
 
         static int indx = 2;   
         static Mueble[] arrProducto = new Mueble[250]; //La nueva capacidad máxima del array será de 250.
@@ -46,19 +51,40 @@ namespace Project
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("Seleccione 1 para añadrir un nuevo producto." + "\n" + "Seleccione 2 para mostrar todos los artículos de la tienda de muebles."
                               + "\n" + "Seleccione 3. Búsqueda." + "\n" + "Seleccione 4 para cerrar el programa.");
+			// #1# El menú de opciones y su funcionamiento será similar al de la práctica anterior, salvo.  #se cumple#
+            // la opción de "Buscar producto", que cambia como se explica más adelante. #se cumple paso búsqueda en el número 3#
+            
             Console.WriteLine("----------------------------");
-
-            arrProducto[0] = new Mueble("Cama", "De estilo italiano", "Negro caoba", 2008, 90000, "Esparta", 33, 699999996);
-            arrProducto[1] = new Mueble("Sofá", "De estilo aterciopelado de sajonia", "Gold", 2004, 13500, "Ikuni", 33, 699899966);
-			arrProducto[2] = new Mueble("Mampara", "De estilo barroco toscano", "rojo etrusco", 2002, 13500, "Esparta", 33, 69399966);
-			arrProducto[3] = new Mueble("Silla", "De estilo eduardiano", "Azul caspio", 1999, 2300, "Ikuni", 33, 699999566);
-			arrProducto[4] = new Mueble("Biombo", "De la época Edo", "Azul de Iwate", 1987, 44400, "Esparta", 33, 63999966);
+            
+			// #1# De los datos de cada producto, además se desea almacenar el nombre del ...
+			// fabricante, su código de identificación y su teléfono.
+			
+			// #2# Opciones. Se cumple.Mostrar por pantalla todas las opciones del menú principal del programa incluso las que el usuario añada.
+			
+			// #3# La función Añadir recibirá como parámetro el array de productos, el contador ...
+			//	de elem	entos del array y no devolverá nada. Internamente, pedirá al usuario los datos del ...
+			//	nuevo producto, lo añadirá al array e incrementará el contador.  
+			
+			// #4# Falta la opción borrar.
+			
+			// #5# Falta la opción ordenar.
+			
+			// #6# Se cumple.
+			
+			// #7# Se cumple.
+			
+			// #8# Se cumple.
+            arrProducto[0] = new Mueble("Cama", "De estilo italiano", "Negro caoba", 2008, 90000, "Esparta", 02, 699999996);
+            arrProducto[1] = new Mueble("Sofá", "De estilo aterciopelado de sajonia", "Gold", 2004, 13500, "Ikuni", 03, 699899966);
+			arrProducto[2] = new Mueble("Mampara", "De estilo barroco toscano", "rojo etrusco", 2002, 13500, "Esparta", 04, 69399966);
+			arrProducto[3] = new Mueble("Silla", "De estilo eduardiano", "Azul caspio", 1999, 2300, "Ikuni", 05, 699999566);
+			arrProducto[4] = new Mueble("Biombo", "De la época Edo", "Azul de Iwate", 1987, 44400, "Esparta", 06, 63999966);
 			
             string SeleccionPrincipal = Console.ReadLine();
 
             if (SeleccionPrincipal == "1")
             {
-                AddProducto("Armario", "Estilo castellano", "Verde oscuro",  1897, 40500, "Esparta", 33, 690999966);
+                AddProducto("Armario", "Estilo castellano", "Verde oscuro",  1897, 40500, "Esparta", 07, 690999966);
                 return true;
             }
             else if (SeleccionPrincipal == "2")
@@ -85,6 +111,9 @@ namespace Project
             }
 
         }
+        
+        //En el programa principal, se debe sustituir todo el código del "case" correspondiente
+		//a cada opción del menú,  #se cumple (no hay código case)#
 
         public static void AddProducto(string make, string model, 
         string color, int year, int price, string fabricante, int identificación, int teléfono)
@@ -93,7 +122,7 @@ namespace Project
 
             arrProducto[indx] = new Mueble(make, model,  color, year, price, fabricante, identificación, teléfono);
 
-            arrProducto[indx] = new Mueble("Armario", "Estilo castellano", "Verde oscuro", 1897, 40500, "Esparta", 33, 699939966);
+            arrProducto[indx] = new Mueble("Armario", "Estilo castellano", "Verde oscuro", 1897, 40500, "Esparta", 07, 699939966);
 
             Console.Write("Ingrese el producto: ");
             arrProducto[indx].Make = Console.ReadLine();
@@ -311,7 +340,7 @@ namespace Project
             }
 
         }
-        public static void BuscarMueblesFabricante() //se pide incluir fabricante en el menú
+        public static void BuscarMueblesFabricante() // se pide incluir fabricante en el menú
         {
             Console.WriteLine("Por favor. Introduzca el color que desea. ");
             string buscarFabricante = Console.ReadLine();
