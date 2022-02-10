@@ -8,9 +8,9 @@ Apartado 1.2 si
 Apartado 1.3 si 
 Apartado 1.4 no 
 Apartado 1.5 no 
-Apartado 1.6 si / no / parcialmente
-Apartado 1.7 si / no / parcialmente
-Apartado 1.8 si / no / parcialmente
+Apartado 1.6 si 
+Apartado 1.7 si / parcialmente
+Apartado 1.8 si 
 
 
 */
@@ -49,8 +49,8 @@ namespace Project
             Console.WriteLine("   ¡Bienvenido a la tienda de muebles! ");
             Console.WriteLine("      El buen descansar de Ávila");
             Console.WriteLine("-----------------------------------------");
-            Console.WriteLine("Seleccione 1 para añadrir un nuevo producto." + "\n" + "Seleccione 2 para mostrar todos los artículos de la tienda de muebles."
-                              + "\n" + "Seleccione 3. Búsqueda." + "\n" + "Seleccione 4 para cerrar el programa.");
+            Console.WriteLine("Seleccione 1. para añadrir un nuevo producto." + "\n" + "Seleccione 2. para mostrar todos los artículos de la tienda de muebles."
+                              + "\n" + "Seleccione 3. Búsqueda." + "\n" + "Seleccione 4. para cerrar el programa.");
 			// #1# El menú de opciones y su funcionamiento será similar al de la práctica anterior, salvo.  #se cumple#
             // la opción de "Buscar producto", que cambia como se explica más adelante. #se cumple paso búsqueda en el número 3#
             
@@ -69,11 +69,13 @@ namespace Project
 			
 			// #5# Falta la opción ordenar.
 			
-			// #6# Se cumple.
+			// #6# Se cumple. La opción búsqueda es amplia y la he podido incluir en todos los parámetros del programa.
 			
-			// #7# Se cumple.
+			// #7# Se cumple. Muestra todas la opciones archivadas y las nueva añadidas. Faltaría quizás un listado  
 			
-			// #8# Se cumple.
+			// #8# Se cumple. Además de la implementación del programa siguiendo los pasos indicados..
+			// se cumple la opción ampliamente. El usuario puede ver todas las opciones en la pantalla
+
             arrProducto[0] = new Mueble("Cama", "De estilo italiano", "Negro caoba", 2008, 90000, "Esparta", 02, 699999996);
             arrProducto[1] = new Mueble("Sofá", "De estilo aterciopelado de sajonia", "Gold", 2004, 13500, "Ikuni", 03, 699899966);
 			arrProducto[2] = new Mueble("Mampara", "De estilo barroco toscano", "rojo etrusco", 2002, 13500, "Esparta", 04, 69399966);
@@ -248,7 +250,7 @@ namespace Project
 
         public static void BuscarMueblesMake()
         {
-            Console.WriteLine("Escriba el color del mueble y luego presione Intro para iniciar la búsqueda: ");
+            Console.WriteLine("Escriba el produto o mueble y luego presione Intro para iniciar la búsqueda: ");
             string buscarMake = Console.ReadLine();
             int i = 0;
 
